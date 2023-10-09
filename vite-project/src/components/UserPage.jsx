@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './UserPage.css';
+import { Link } from 'react-router-dom'; // Import the Link component
 
 function UserPage() {
   const [products, setProducts] = useState([]);
@@ -115,8 +116,8 @@ function UserPage() {
         </ul>
         {cart.length > 0 && (
           <div>
-            <p><strong>Total Cost: ${calculateTotalCost()}</strong></p>
-            <button onClick={makePurchase}>Purchase</button>
+            <p><strong>Total Cost: ₹{calculateTotalCost()}</strong></p>
+            <Link to="/cart">View Cart</Link> {/* Use the Link component to navigate to the cart page */}
           </div>
         )}
       </div>
